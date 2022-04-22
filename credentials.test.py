@@ -33,12 +33,16 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(len(Credentials.user_credentials), 1)
         self.new_credentials.delete_credentials()
         self.assertEqual(len(Credentials.user_credentials), 0)
-         def test_find_credentials_by_platform(self):
+        def test_find_credentials_by_platform(self):
             """
         test to check if we can find a credential by platform
         """
         self.found_credentials = Credentials.find_by_account_platform(
             "Telegram")
+        
+    if __name__ == '__main__':
+        unittest.main()
+
 
 
 
