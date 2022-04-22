@@ -40,3 +40,8 @@ class TestUser(unittest.TestCase):
         """
         self.found_user = User.find_user("developercasey")
 
+    def test_user_exists(self):
+        """
+        check whether the user account exists in the user accounts list
+        """
+        self.found_user = User.user_exist("developercasey")
