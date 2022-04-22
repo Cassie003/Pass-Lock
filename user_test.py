@@ -34,3 +34,9 @@ class TestUser(unittest.TestCase):
         self.new_user.delete_user()
         self.assertEqual(len(User.user_accounts), 0)
 
+    def test_find_user(self):
+        """
+        check whether the user account exists in the user accounts list
+        """
+        self.found_user = User.find_user("developercasey")
+
