@@ -16,5 +16,19 @@ class Credentials():
     def save_credentials(self):
         """
             save credentials method that saves credentials into user_credentials[]
+            @classmethod
+    def find_by_account_platform(cls, account_platform):
         """
+            Method that takes in a account_platform and returns a credentials that matches that account_platform.
+        """
+        for credentials in cls.user_credentials:
+            if credentials.account_platform == account_platform:
+                return credentials
+        return False
+
+"""
         Credentials.user_credentials.append(self)
+        """
+            deletes saved credential from the user_credentials[]
+        """
+        
