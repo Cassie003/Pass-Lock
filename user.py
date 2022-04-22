@@ -11,3 +11,15 @@ class User():
         self.username = username
         self.password = password
 
+    def save_user(self):
+        """
+        Save user to list.
+        """
+        User.user_accounts.append(self)
+
+    def delete_user(self):
+        """ 
+        Delete user from the list
+        """
+        User.user_accounts.remove(self)
+
