@@ -38,5 +38,14 @@ class Credentials():
         """
         return cls.user_credentials
 
-        
+            @classmethod
+    def generate_password(cls, password_length):
+        """
+            generate random password for a user creating a new account int the user_credentials[]
+        """
+        alpa = string.ascii_letters + string.digits
+        password = ''.join(random.choice(alpa)
+                           for i in range(password_length))
+        return password
+
         
