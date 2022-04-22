@@ -45,3 +45,5 @@ class TestUser(unittest.TestCase):
         check whether the user account exists in the user accounts list
         """
         self.found_user = User.user_exist("developercasey")
+if __name__ == '__main__':
+    unittest.main()
