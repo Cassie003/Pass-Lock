@@ -31,4 +31,12 @@ class Credentials():
         """
             deletes saved credential from the user_credentials[]
         """
+            @classmethod
+    def display_credentials(cls):
+        """
+            returns the credentials list(all credentials)
+        """
+        return cls.user_credentials
+
+        
         
