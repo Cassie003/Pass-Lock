@@ -24,6 +24,15 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(len(Credentials.user_credentials), 0)
         self.new_credentials.save_credentials()
         self.assertEqual(len(Credentials.user_credentials), 1)
+    def test_delete_credentials(self):
+        """
+        checks if a saved credential from the user_credentials[] is deleted
+        """
+        self.assertEqual(len(Credentials.user_credentials), 0)
+        self.new_credentials.save_credentials()
+        self.assertEqual(len(Credentials.user_credentials), 1)
+        self.new_credentials.delete_credentials()
+        self.assertEqual(len(Credentials.user_credentials), 0)
 
 
 
