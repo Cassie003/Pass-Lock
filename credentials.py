@@ -1,12 +1,14 @@
-import  random
+import random
 import string
+
+
 class Credentials():
     
     user_credentials = []
 
     def __init__(self, account_platform, user_account_username, user_account_password):
         """
-            account_platform: New credentials account name eg pintrest account.
+            account_platform: New credentials account name eg instagram account.
             user_account_password: New credentials account password.
         """
         self.account_platform = account_platform
@@ -16,7 +18,16 @@ class Credentials():
     def save_credentials(self):
         """
             save credentials method that saves credentials into user_credentials[]
-            @classmethod
+        """
+        Credentials.user_credentials.append(self)
+
+    def delete_credentials(self):
+        """
+            deletes saved credential from the user_credentials[]
+        """
+        Credentials.user_credentials.remove(self)
+
+    @classmethod
     def find_by_account_platform(cls, account_platform):
         """
             Method that takes in a account_platform and returns a credentials that matches that account_platform.
@@ -26,19 +37,14 @@ class Credentials():
                 return credentials
         return False
 
-"""
-        Credentials.user_credentials.append(self)
-        """
-            deletes saved credential from the user_credentials[]
-        """
-            @classmethod
+    @classmethod
     def display_credentials(cls):
         """
             returns the credentials list(all credentials)
         """
         return cls.user_credentials
 
-            @classmethod
+    @classmethod
     def generate_password(cls, password_length):
         """
             generate random password for a user creating a new account int the user_credentials[]
@@ -47,5 +53,3 @@ class Credentials():
         password = ''.join(random.choice(alpa)
                            for i in range(password_length))
         return password
-
-        
